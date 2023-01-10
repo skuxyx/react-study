@@ -12,7 +12,9 @@ root.render(
   // 애플리케이션 내 잠재적인 문제를 알아내기 위한 도구로 활용.
   <React.StrictMode>
     {/* App ( app.js ) 코드를 화면에 출력 시켜 줌. */}
-    <App />
+    {/* 컴포넌트에 데이터를 전달하고자 할 때 'props'를 사용. */}
+    {/* 해당 예시에서는 App 자식 컴포넌트에 age=23 을 전달해 주고자 함. */}
+    <App age={23} />
   </React.StrictMode>
 );
 
