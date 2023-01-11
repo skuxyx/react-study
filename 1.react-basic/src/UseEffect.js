@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 // 1. useEffect 를 활용하기 위해서는 import { useEffect } from 'react';
 
 export default function UseEffect() {
@@ -13,5 +14,28 @@ export default function UseEffect() {
   // Clean up => 정리작업.
   // useEffect(() => { 코드 } return () => { }) => useEffect의 return 값으로 함수를 넣어줌.
 
-  return <div></div>;
+  const [inputText, setInputText] = useState('');
+
+  const changeInput = (event) => {
+    setInputText(event.target.value);
+  };
+
+  //     useEffect(() => {
+  //       console.log('input 값이 수정될 때 마다 계속 실행됨.');
+  //     });
+
+  //     useEffect(() => {
+  //       console.log('input 값이 수정될 때 마다 계속 실행됨.');
+  //     }, [inputText]);
+
+  //   useEffect(() => {
+  //     console.log('실행될 때 한 번만 실행.');
+  //   }, []);
+
+  return (
+    <div>
+      <input type='text' onChange={changeInput} placeholder='입력하세요.' />
+      <p>{inputText}</p>
+    </div>
+  );
 }
