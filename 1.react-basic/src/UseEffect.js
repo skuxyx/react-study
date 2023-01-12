@@ -15,27 +15,34 @@ export default function UseEffect() {
   // useEffect(() => { 코드 } return () => { }) => useEffect의 return 값으로 함수를 넣어줌.
 
   const [inputText, setInputText] = useState('');
-
+  const [inputText2, setInputText2] = useState('');
   const changeInput = (event) => {
     setInputText(event.target.value);
   };
 
-  //     useEffect(() => {
-  //       console.log('input 값이 수정될 때 마다 계속 실행됨.');
-  //     });
+  const changeInput2 = (event) => {
+    setInputText2(event.target.value);
+  };
 
-  //     useEffect(() => {
-  //       console.log('input 값이 수정될 때 마다 계속 실행됨.');
-  //     }, [inputText]);
+  // useEffect(() => {
+  //   console.log('input 값이 수정될 때 마다 계속 실행됨.');
+  // });
 
-  //   useEffect(() => {
-  //     console.log('실행될 때 한 번만 실행.');
-  //   }, []);
+  // inputText2 의 값을 수정해도 콘솔에 찍히지 않는 모습을 확인할 수 있음.
+  useEffect(() => {
+    console.log('inputText 값이 수정될 때 마다 계속 실행됨.');
+  }, [inputText]);
+
+  // useEffect(() => {
+  //   console.log('실행될 때 한 번만 실행.');
+  // }, []);
 
   return (
     <div>
       <input type='text' onChange={changeInput} placeholder='입력하세요.' />
+      <input type='text' onChange={changeInput2} placeholder='입력하세요.' />
       <p>{inputText}</p>
+      <p>{inputText2}</p>
     </div>
   );
 }
