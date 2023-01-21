@@ -1,7 +1,3 @@
-// useMemo 메모이제이션을 이용한 것과 비슷.
-// useMemo => 값의 재사용을 위해 사용,
-// useCallback => 함수의 재사용을 위해 사용.
-
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
 
